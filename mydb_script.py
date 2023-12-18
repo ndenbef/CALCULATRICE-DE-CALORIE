@@ -51,8 +51,7 @@ CREATE TABLE IF NOT EXISTS ALIMENTS(
 # Execute the schema
 mycursor.execute(schema)
 
-# Close the cursor and connection
-mycursor.close()
+
 
 
 nom = ["Abricot","Ananas","Banane","Citron","Mangue","Orange","Papaye","Pastèque","Pomme","Prune"]
@@ -95,4 +94,5 @@ for i in range(0, len(nom)) :
     mycursor.execute("INSERT INTO ALIMENTS(nom, calories, categorie) VALUES ( %s, %s, %s)",(nom[i], cal[i], cat))
     mydb.commit()
 
-mydb.close()
+# Close the cursor and connection
+mycursor.close()
