@@ -53,7 +53,6 @@ mycursor.execute(schema)
 
 # Close the cursor and connection
 mycursor.close()
-mydb.close()
 
 
 nom = ["Abricot","Ananas","Banane","Citron","Mangue","Orange","Papaye","Pastèque","Pomme","Prune"]
@@ -95,3 +94,5 @@ cat = "Produits laitiers"
 for i in range(0, len(nom)) :
     mycursor.execute("INSERT INTO ALIMENTS(nom, calories, categorie) VALUES ( %s, %s, %s)",(nom[i], cal[i], cat))
     mydb.commit()
+
+mydb.close()
